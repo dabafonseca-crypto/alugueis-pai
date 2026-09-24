@@ -58,6 +58,8 @@
       display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:8px;
       padding:12px 11px 10px;border-bottom:1px solid var(--line);align-items:start
     }
+    .mov:nth-child(odd){background:#ffffff}
+    .mov:nth-child(even){background:#eef0f2}
     .mov:last-child{border-bottom:0}
     .mov-data{color:var(--muted);font-size:.92rem;font-weight:750;padding-top:2px}
     .mov-desc{min-width:0;font-size:1.06rem;font-weight:700;line-height:1.35;overflow-wrap:anywhere}
@@ -66,7 +68,9 @@
     .mov-saldo{grid-column:2/4;text-align:right;color:var(--muted);font-size:.87rem;font-weight:650}
 
     .carne{margin-bottom:10px}
-    .carne-cab{padding:14px}
+    .carne-cab{padding:14px;background:transparent}
+    .carne .ver{background:rgba(255,255,255,.52)}
+    .carne .parcelas{background:rgba(255,255,255,.42)}
     .carne-topo{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
     .nome{margin:0;font-size:1.18rem;font-weight:900;line-height:1.28}
     .valor{margin-top:5px;font-size:1.5rem;font-weight:900}
@@ -283,6 +287,27 @@ function renderExtrato(){
   }).join('');
 }
 
+const CORES_CLIENTES=[
+  '#ffffff',
+  '#eef5ff',
+  '#eef8f1',
+  '#fff7e8',
+  '#f6efff',
+  '#eefafa',
+  '#fff0f4',
+  '#f3f5e9'
+];
+
+function corDoCliente(nome){
+  const texto=String(nome||'').trim().toLowerCase();
+  let hash=0;
+  for(let i=0;i<texto.length;i++){
+    hash=((hash<<5)-hash)+texto.charCodeAt(i);
+    hash|=0;
+  }
+  return CORES_CLIENTES[Math.abs(hash)%CORES_CLIENTES.length];
+}
+
 function statusTag(status){
   const s=String(status||'').toUpperCase();
   if(s==='PAGO')return '<span class="tag tag-pago">Pago</span>';
@@ -323,7 +348,7 @@ function renderCarnes(){
       <div class="parcela-direita"><div class="pv">${esc(p.valor||dinheiro(c.valor_planilha))}</div>${statusTag(p.status)}</div>
     </div>`).join('');
 
-    return `<article class="card carne">
+    return `<article class="card carne" style="background:${corDoCliente(c.nome_planilha)}">
       <div class="carne-cab">
         <div class="carne-topo">
           <div><h2 class="nome">${esc(c.nome_planilha||'Sem nome')}</h2><div class="valor">${esc(dinheiro(c.valor_planilha))}</div></div>
