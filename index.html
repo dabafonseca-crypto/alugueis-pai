@@ -28,55 +28,62 @@
     button,select{font:inherit}
     .app{width:min(100%,760px);margin:0 auto;padding:16px 14px 92px}
     header{margin-bottom:14px}
-    h1{margin:0;font-size:1.45rem;font-weight:850;letter-spacing:-.02em}
-    #atualizado{margin-top:4px;color:var(--muted);font-size:.78rem}
+    h1{margin:0;font-size:1.65rem;font-weight:850;letter-spacing:-.02em}
+    #atualizado{margin-top:5px;color:var(--muted);font-size:.92rem;font-weight:600}
     .tab-page{display:none}.tab-page.active{display:block}
     .card{
       background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
       overflow:hidden;box-shadow:0 1px 2px rgba(16,24,40,.04)
     }
 
-    .saldo{padding:16px;margin-bottom:10px}
-    .saldo-label{color:var(--muted);font-size:.86rem;font-weight:650}
-    .saldo-valor{margin-top:2px;font-size:2rem;font-weight:900;letter-spacing:-.04em}
-    .negativo{color:var(--red)!important}.positivo{color:var(--green)!important}
-    .mes{display:grid;grid-template-columns:46px 1fr 46px;gap:8px;margin-top:13px}
-    .mes button,.mes select{
-      height:44px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--text)
+    .saldo{
+      padding:17px 16px 16px;
+      margin-bottom:10px;
+      position:sticky;
+      top:8px;
+      z-index:15;
+      box-shadow:0 6px 18px rgba(16,24,40,.10);
     }
-    .mes button{font-size:1.4rem;font-weight:800}.mes button:disabled{opacity:.3}
-    .mes select{padding:0 8px;text-align:center;font-weight:750}
+    .saldo-label{color:var(--muted);font-size:1rem;font-weight:750}
+    .saldo-valor{margin-top:3px;font-size:2.45rem;font-weight:900;letter-spacing:-.045em;line-height:1.08}
+    .negativo{color:var(--red)!important}.positivo{color:var(--green)!important}
+    .mes{display:grid;grid-template-columns:52px 1fr 52px;gap:8px;margin-top:15px}
+    .mes button,.mes select{
+      height:50px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--text)
+    }
+    .mes button{font-size:1.75rem;font-weight:850}.mes button:disabled{opacity:.3}
+    .mes select{padding:0 8px;text-align:center;font-weight:850;font-size:1.08rem}
     .movimentos{margin-bottom:10px}
     .mov{
       display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:8px;
-      padding:9px 11px 7px;border-bottom:1px solid var(--line);align-items:start
+      padding:12px 11px 10px;border-bottom:1px solid var(--line);align-items:start
     }
     .mov:last-child{border-bottom:0}
-    .mov-data{color:var(--muted);font-size:.78rem;font-weight:650;padding-top:2px}
-    .mov-desc{min-width:0;font-size:.92rem;font-weight:650;overflow-wrap:anywhere}
+    .mov-data{color:var(--muted);font-size:.92rem;font-weight:750;padding-top:2px}
+    .mov-desc{min-width:0;font-size:1.06rem;font-weight:700;line-height:1.35;overflow-wrap:anywhere}
     .mov-desc.vazia{color:var(--muted);font-weight:500;font-style:italic}
-    .mov-valor{text-align:right;white-space:nowrap;font-size:.91rem;font-weight:850}
-    .mov-saldo{grid-column:2/4;text-align:right;color:var(--muted);font-size:.7rem}
+    .mov-valor{text-align:right;white-space:nowrap;font-size:1.08rem;font-weight:900}
+    .mov-saldo{grid-column:2/4;text-align:right;color:var(--muted);font-size:.87rem;font-weight:650}
 
     .carne{margin-bottom:10px}
     .carne-cab{padding:14px}
     .carne-topo{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
-    .nome{margin:0;font-size:1.02rem;font-weight:900;line-height:1.22}
-    .valor{margin-top:4px;font-size:1.25rem;font-weight:900}
+    .nome{margin:0;font-size:1.18rem;font-weight:900;line-height:1.28}
+    .valor{margin-top:5px;font-size:1.5rem;font-weight:900}
     .tag{
       display:inline-flex;align-items:center;border-radius:999px;padding:5px 8px;
-      font-size:.7rem;font-weight:850;white-space:nowrap
+      font-size:.82rem;font-weight:850;white-space:nowrap
     }
     .tag-pago{background:var(--green-bg);color:var(--green)}
     .tag-pendente{background:var(--amber-bg);color:var(--amber)}
     .tag-neutro{background:#eef1f5;color:#53606f}
     .info{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:11px}
     .info-item{padding:8px 9px;border-radius:10px;background:#f8f9fb}
-    .info-item span{display:block;color:var(--muted);font-size:.69rem;font-weight:650}
-    .info-item strong{display:block;margin-top:2px;font-size:.87rem}
+    .info-item span{display:block;color:var(--muted);font-size:.82rem;font-weight:700}
+    .info-item strong{display:block;margin-top:3px;font-size:1rem}
     .resumo{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
-    .proxima{margin-top:9px;padding:9px 10px;border-radius:10px;background:#f8f9fb;font-size:.84rem}
-    .sem-carne{margin-top:10px;color:var(--muted);font-size:.84rem}
+    .proxima{margin-top:10px;padding:11px 12px;border-radius:10px;background:#f8f9fb;font-size:.98rem;line-height:1.4}
+    .sem-carne{margin-top:10px;color:var(--muted);font-size:.96rem}
     .ver{
       width:100%;min-height:44px;border:0;border-top:1px solid var(--line);
       background:#fff;color:var(--blue);font-weight:850
@@ -88,10 +95,10 @@
       border-bottom:1px solid var(--line);align-items:center
     }
     .parcela:last-child{border-bottom:0}
-    .parcela strong{font-size:.88rem}
-    .parcela small{display:block;margin-top:2px;color:var(--muted);font-size:.74rem}
+    .parcela strong{font-size:1.02rem}
+    .parcela small{display:block;margin-top:3px;color:var(--muted);font-size:.88rem}
     .parcela-direita{text-align:right}
-    .parcela-direita .pv{margin-bottom:4px;font-size:.82rem;font-weight:800}
+    .parcela-direita .pv{margin-bottom:5px;font-size:.98rem;font-weight:850}
 
     .vazio,.erro{padding:24px 16px;text-align:center;color:var(--muted)}
     .erro strong{display:block;color:var(--text);font-size:1rem;margin-bottom:5px}
@@ -102,9 +109,16 @@
       padding:7px 10px calc(7px + env(safe-area-inset-bottom))
     }
     .nav-inner{width:min(100%,760px);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:8px}
-    .tab{height:52px;border:0;border-radius:13px;background:transparent;color:#667085;font-weight:850}
+    .tab{height:58px;border:0;border-radius:13px;background:transparent;color:#667085;font-size:1.05rem;font-weight:850}
     .tab.active{color:var(--blue);background:#edf3ff}
 
+    @media (max-width:390px){
+      .mov{grid-template-columns:68px minmax(0,1fr) auto;gap:7px}
+      .mov-data{font-size:.87rem}
+      .mov-desc{font-size:1rem}
+      .mov-valor{font-size:1.02rem}
+      .saldo-valor{font-size:2.25rem}
+    }
     @media (min-width:650px){
       .app{padding-left:20px;padding-right:20px}
       .info{grid-template-columns:repeat(3,1fr)}
