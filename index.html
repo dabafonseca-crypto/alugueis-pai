@@ -19,7 +19,7 @@
       --amber:#9a6700; --green-bg:#edf8f1; --amber-bg:#fff7df; --radius:16px;
     }
     *{box-sizing:border-box}
-    html{background:var(--bg)}
+    html{background:var(--bg);font-size:18px}
     body{
       margin:0;background:var(--bg);color:var(--text);
       font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
@@ -67,10 +67,10 @@
     .mov-valor{text-align:right;white-space:nowrap;font-size:1.08rem;font-weight:900}
     .mov-saldo{grid-column:2/4;text-align:right;color:var(--muted);font-size:.87rem;font-weight:650}
 
-    .carne{margin-bottom:10px}
+    .carne{margin-bottom:12px;border-color:#d2d6dc;box-shadow:0 2px 5px rgba(16,24,40,.08)}
     .carne-cab{padding:14px;background:transparent}
-    .carne .ver{background:rgba(255,255,255,.52)}
-    .carne .parcelas{background:rgba(255,255,255,.42)}
+    .carne .ver{background:rgba(255,255,255,.68)}
+    .carne .parcelas{background:rgba(255,255,255,.58)}
     .carne-topo{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
     .nome{margin:0;font-size:1.18rem;font-weight:900;line-height:1.28}
     .valor{margin-top:5px;font-size:1.5rem;font-weight:900}
@@ -288,14 +288,14 @@ function renderExtrato(){
 }
 
 const CORES_CLIENTES=[
-  '#ffffff',
-  '#eef5ff',
-  '#eef8f1',
-  '#fff7e8',
-  '#f6efff',
-  '#eefafa',
-  '#fff0f4',
-  '#f3f5e9'
+  '#dcecff',
+  '#def3e4',
+  '#ffedcc',
+  '#eadfff',
+  '#d9f0f0',
+  '#ffe0e8',
+  '#e8f3cf',
+  '#f3e0d5'
 ];
 
 function corDoCliente(nome){
